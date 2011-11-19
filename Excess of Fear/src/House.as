@@ -14,15 +14,11 @@ package
 		public function House() 
 		{
 			add(new Cursor());
-			for (var i:int = 0; i < 10; i++)
-			{
-				add(new Objects());
-			}
 			
 			add(new DragObject());
 			add(new OldLady());
 			add(new Picture());
-			add(new Background(new Image (BACK)));
+			add(new Background(new Image(BACK)));
 		}
 		
 		override public function update():void 
