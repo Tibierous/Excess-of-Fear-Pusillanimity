@@ -5,12 +5,14 @@ package
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
 	
-	public class StartScreen extends World
+	public class WinScreen extends World
 	{
-		
-		public function StartScreen() 
+		private var text:DisplayText
+	
+		public function WinScreen() 
 		{
-			add(new DisplayText(350, 300, "Press Space to Start"));
+			text = new DisplayText(340, 295, "You Win. Press Space");
+			add(text);
 		}
 		
 		override public function update():void 
@@ -19,7 +21,7 @@ package
 			
 			if (Input.pressed(Key.SPACE))
 			{
-				FP.world = new Hall();
+				FP.world = new StartScreen();
 			}
 		}
 		

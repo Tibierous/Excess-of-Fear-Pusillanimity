@@ -1,16 +1,18 @@
-package  
+package Asserts 
 {
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
 	
-	public class StartScreen extends World
+	public class LoseScreen extends World
 	{
+		private var text:DisplayText
 		
-		public function StartScreen() 
+		public function LoseScreen() 
 		{
-			add(new DisplayText(350, 300, "Press Space to Start"));
+			text = new DisplayText(340, 295, "You Lose. Press Space");
+			add(text);
 		}
 		
 		override public function update():void 

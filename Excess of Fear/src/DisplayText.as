@@ -13,6 +13,11 @@ package
 			y = Y;
 		}
 		
+		public function setText(s:String):void
+		{
+			graphic = new Text(s);
+		}
+		
 	}
 	
 }

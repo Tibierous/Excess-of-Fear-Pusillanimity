@@ -5,19 +5,21 @@ package
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.FP;
 
-	public class Picture extends Objects
+	public class Picture extends Entity
 	{
-		[Embed(source = 'Asserts/Textures/frame.png')] private const IMAGE:Class;
+		[Embed(source = 'Asserts/Textures/curtains.png')] private const IMAGE:Class;
 		
-		public var sprPicture:Spritemap = new Spritemap(IMAGE, 326, 296);
+		public var sprPicture:Spritemap = new Spritemap(IMAGE, 50, 50);
 		
 		public function Picture() 
 		{
-			sprPicture.add("Close", [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11], 20, false);
+			sprPicture.add("Close", [0, 1], 20, false);
+			sprPicture.scale = 2.2;
 			graphic = sprPicture;
-			x = 250;
-			y = 300;
-			setHitbox(width, height, 0, 0);
+			x = 370;
+			y = 210;
+			setHitbox(5, 5, -100, -85);
+			type = "object";
 		}
 		
 		public override function update():void
@@ -27,6 +29,8 @@ package
 				if (collidePoint(x,y,Input.mouseX,Input.mouseY))
 				{
 					sprPicture.play("Close");
+					type = "none";
+					(world as Hall).Found();
 				}
 			}
 		}
