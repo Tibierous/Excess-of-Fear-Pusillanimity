@@ -1,6 +1,5 @@
 package  
 {
-	
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.utils.Input;
@@ -19,21 +18,24 @@ package
 			y = Math.random() * 600;
 			width = image.scaledWidth;
 			height = image.scaledHeight;
-			
+			setHitbox(width, height, 0, 0);
+			type = "object";
 		}
 		
 		override public function update():void
 		{
 			if (Input.mousePressed)
 			{
-				if (Input.mouseX >= x && Input.mouseX <= x + width)
+				if (collidePoint(x,y,Input.mouseX,Input.mouseY))
 				{
-					if (Input.mouseY >= y && Input.mouseY <= y + height)
-					{
-						FP.world.remove(this);
-					}
+					FP.world.remove(this);
 				}
 			}
+		}
+		
+		public function Ingteract(o:Objects):void
+		{
+			
 		}
 		
 	}
