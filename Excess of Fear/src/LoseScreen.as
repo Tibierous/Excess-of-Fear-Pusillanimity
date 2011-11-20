@@ -1,20 +1,20 @@
-package  
+package
 {
+	import net.flashpunk.graphics.Image;
 	import net.flashpunk.World;
 	import net.flashpunk.FP;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
-	import net.flashpunk.graphics.Image;
 	
-	public class WinScreen extends World
+	public class LoseScreen extends World
 	{
-		[Embed (source = 'Asserts/Textures/winscreen.png')] private const BACK:Class;
-		private var next: String;
-	
-		public function WinScreen(nextLevel:String) 
+		private var r:String;
+		[Embed (source = 'Asserts/Textures/losescreen.png')] private const BACK:Class;
+		
+		public function LoseScreen(re:String) 
 		{
+			r = re;
 			addGraphic(new Image(BACK));
-			next = nextLevel;
 		}
 		
 		override public function update():void 
@@ -23,10 +23,10 @@ package
 			
 			if (Input.pressed(Key.SPACE))
 			{
-				switch(next)
+				switch(r)
 				{
 					case "Bathroom": FP.world = new Bathroom(); break;
-					default : FP.world = new StartScreen(); break;
+					case "Hall": FP.world = new Hall(); break;
 				}
 			}
 		}
