@@ -2,11 +2,14 @@ package
 {
 	import net.flashpunk.Entity;
 	import net.flashpunk.utils.Input;
+	import net.flashpunk.Sfx;
 	
 	public class Flush extends Entity
 	{
 		private var lock:Boolean = true;
 		private var c:Crocadile;
+		[Embed (source = 'Asserts/Textures/audio/toilet.mp3')] private const SOUND:Class;
+		private var sound:Sfx = new Sfx(SOUND);
 		
 		public function Flush(croc:Crocadile) 
 		{
@@ -30,12 +33,11 @@ package
 				if (collidePoint(x,y,Input.mouseX,Input.mouseY))
 				{
 					c.flush();
+					sound.play();
 					world.remove(this);
 				}
 			}
 		}
-		
 	}
-		
 }
 	
