@@ -12,39 +12,35 @@ package
 		
 		private var closeImage:Image;
 		private var openImage:Image;
-		private var open:Boolean = false;
+		private var open:Boolean = true;
 		private var sprPicture:Spritemap = new Spritemap(CLOSE, 70, 100);
 		private var lock: Boolean = false;
+		public function Checklock():Boolean
+		{
+			return lock
+		}
 		
 		public function Cupbord() 
 		{
-			sprPicture.add("Open", [0, 1], 20, false);
-			sprPicture.add("Close", [1, 0], 20, false);
+			sprPicture.add("Open", [1, 0], 20, false);
+			sprPicture.add("Close", [0, 1], 20, false);
 			graphic = sprPicture;
 			x = 340;
 			y = 390;
-			setHitbox(6, 6, -50, -60);
+			setHitbox(50, 50, -20, -45);
 			type = "object";
 		}
 		
 		public override function update():void
 		{
-			if (Input.mousePressed && !lock)
+			if (Input.mousePressed && !lock && Main.Carrying==false)
 			{
 				if (collidePoint(x,y,Input.mouseX,Input.mouseY))
 				{
-					if (open)
-					{
-						open = false;
-						sprPicture.play("Close");
-						setHitbox(6, 6, -50, -60);
-					}
-					else
-					{
-						open = true;
-						sprPicture.play("Open");
-						setHitbox(50, 50, -20, -45);
-					}
+					open = false;
+					sprPicture.play("Close");
+					type = "none";
+					lock=true
 				}
 			}
 		}

@@ -5,6 +5,7 @@ package
 	import net.flashpunk.FP;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
+	import flash.ui.Mouse;
 	
 	public class LoseScreen extends World
 	{
@@ -15,6 +16,8 @@ package
 		{
 			r = re;
 			addGraphic(new Image(BACK));
+			Mouse.show();
+			FP.alarm (1/60, function():void{Main.Carrying = false})
 		}
 		
 		override public function update():void 

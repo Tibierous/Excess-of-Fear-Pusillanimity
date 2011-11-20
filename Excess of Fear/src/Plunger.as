@@ -3,6 +3,8 @@ package
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Image;
 	import net.flashpunk.utils.Input;
+	import net.flashpunk.FP;
+	import flash.ui.Mouse;
 
 	public class Plunger extends Entity
 	{
@@ -41,12 +43,16 @@ package
 						c.Plung();
 						f.Interact();
 						world.remove(this);
+						Mouse.show();
+						FP.alarm (1/60, function():void{Main.Carrying = false})
 					}
 					else
 					{
 						holded = false;
 						x = xOrigin
 						y = yOrigin;
+						Mouse.show();
+						FP.alarm (1/60, function():void{Main.Carrying = false})
 					}
 					
 				}
@@ -58,6 +64,8 @@ package
 					if (collidePoint(x,y,Input.mouseX,Input.mouseY))
 					{
 						holded = true;
+						Mouse.hide();
+						Main.Carrying = true;
 					}
 				}
 			}
