@@ -32,7 +32,7 @@ package
 			
 			if (Input.pressed(Key.SPACE))
 			{
-				FP.world = new Hall();
+				FP.world = new Bathroom();
 			}
 		}
 		

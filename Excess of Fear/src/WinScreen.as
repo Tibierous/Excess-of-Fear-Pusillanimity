@@ -26,6 +26,7 @@ package
 				switch(next)
 				{
 					case "Bathroom": FP.world = new Bathroom(); break;
+					case "Win": FP.world = new CutSence1(); break;
 					default : FP.world = new StartScreen(); break;
 				}
 			}
