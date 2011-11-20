@@ -20,7 +20,7 @@ package
 		{
 			var image:Image = new Image(IMAGE);
 			graphic = image;
-			x = 180;
+			x = 178;
 			y = 468;
 			xOrigin = x;
 			yOrigin = y;
@@ -70,6 +70,8 @@ package
 						holded = true;
 						Mouse.hide();
 						Main.Carrying = true;
+						layer = Main.Toplayer
+						Main.Toplayer -= 1
 					}
 				}
 			}

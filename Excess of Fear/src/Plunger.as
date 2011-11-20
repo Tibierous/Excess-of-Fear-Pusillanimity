@@ -66,6 +66,8 @@ package
 						holded = true;
 						Mouse.hide();
 						Main.Carrying = true;
+						layer = Main.Toplayer
+						Main.Toplayer -= 1
 					}
 				}
 			}

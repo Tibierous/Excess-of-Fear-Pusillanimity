@@ -29,11 +29,11 @@ package
 			add(new Picture());
 			var cup:Cupbord = new Cupbord();
 			add(cup);
-			add(new Drawers(cup));
 			var web:Cobweb = new Cobweb();
 			add(web);
 			add(new Duster(web));
 			add(new Bucket());
+			add(new Drawers(cup));
 			
 			textCount = new DisplayText(660, 5, "Number Left: " + leftToFind);
 			add(textCount);

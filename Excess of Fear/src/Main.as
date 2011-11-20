@@ -6,6 +6,7 @@ package
 	public class Main extends Engine 
 	{
 		public static var Carrying:Boolean = false;
+		public static var Toplayer:Number = -5000;
 		
 		public function Main():void 
 		{
