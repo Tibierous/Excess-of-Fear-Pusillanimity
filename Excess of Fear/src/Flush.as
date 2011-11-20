@@ -10,7 +10,7 @@ package
 		
 		public function Flush(croc:Crocadile) 
 		{
-			setHitbox(8, 8, 0, 0);
+			setHitbox(13, 12, 10, 6);
 			x = 560;
 			y = 430;
 			type = "none";
@@ -25,7 +25,7 @@ package
 		
 		public override function update():void
 		{
-			if (Input.mousePressed && !lock)
+			if (Input.mousePressed && !lock && Main.Carrying==false)
 			{
 				if (collidePoint(x,y,Input.mouseX,Input.mouseY))
 				{

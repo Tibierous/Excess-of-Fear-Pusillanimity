@@ -5,6 +5,7 @@ package
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.utils.Key;
 	import net.flashpunk.graphics.Image;
+	import flash.ui.Mouse;
 	
 	public class WinScreen extends World
 	{
@@ -15,6 +16,8 @@ package
 		{
 			addGraphic(new Image(BACK));
 			next = nextLevel;
+			Mouse.show();
+			FP.alarm (1/60, function():void{Main.Carrying = false})
 		}
 		
 		override public function update():void 

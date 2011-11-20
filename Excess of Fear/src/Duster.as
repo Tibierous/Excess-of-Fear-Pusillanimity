@@ -48,6 +48,7 @@ package
 						Mouse.show();
 						type = "none";
 						(world as Hall).Found();
+						FP.alarm (1/60, function():void{Main.Carrying = false})
 					}
 					else
 					{
@@ -55,6 +56,7 @@ package
 						x = xOrigin
 						y = yOrigin;
 						Mouse.show();
+						FP.alarm (1/60, function():void{Main.Carrying = false})
 					}
 					
 				}
@@ -67,6 +69,7 @@ package
 					{
 						holded = true;
 						Mouse.hide();
+						Main.Carrying = true;
 					}
 				}
 			}

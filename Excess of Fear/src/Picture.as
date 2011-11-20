@@ -18,7 +18,7 @@ package
 			graphic = sprPicture;
 			x = 370;
 			y = 210;
-			setHitbox(5, 5, -100, -85);
+			setHitbox(10, 10, -97, -83);
 			type = "object";
 		}
 		

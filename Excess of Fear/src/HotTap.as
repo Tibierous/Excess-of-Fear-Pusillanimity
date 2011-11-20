@@ -11,7 +11,6 @@ package
 		
 		public function HotTap(demon:Demon) 
 		{
-			setHitbox(8, 8, 0, 0);
 			x = 528;
 			y = 418;
 			type = "none";
@@ -20,13 +19,14 @@ package
 		
 		public function Interact():void
 		{
+			setHitbox(20, 18, 8, 5);
 			type = "object";
 			lock = false;
 		}
 		
 		public override function update():void
 		{
-			if (Input.mousePressed && !lock)
+			if (Input.mousePressed && !lock && Main.Carrying==false)
 			{
 				if (collidePoint(x,y,Input.mouseX,Input.mouseY))
 				{

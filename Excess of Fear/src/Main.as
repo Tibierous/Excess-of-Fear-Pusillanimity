@@ -5,6 +5,7 @@ package
 	
 	public class Main extends Engine 
 	{
+		public static var Carrying:Boolean = false;
 		
 		public function Main():void 
 		{
