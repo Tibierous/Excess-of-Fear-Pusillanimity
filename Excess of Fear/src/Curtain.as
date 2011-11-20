@@ -2,6 +2,7 @@ package
 {
 	import net.flashpunk.Entity;
 	import net.flashpunk.graphics.Image;
+	import net.flashpunk.Sfx;
 	import net.flashpunk.utils.Input;
 	
 	public class Curtain extends Entity
@@ -10,6 +11,8 @@ package
 		private var image:Image;
 		private var lock:Boolean = false;
 		private var t:HotTap;
+		[Embed (source = 'Asserts/Textures/audio/curtain.mp3')] private const SOUND:Class;
+		private var sound:Sfx = new Sfx(SOUND);
 		
 		public function Curtain(tap:HotTap) 
 		{
@@ -31,6 +34,7 @@ package
 					image.scaleX = 0.3;
 					type = "none";
 					lock = true;
+					sound.play();
 					t.Interact();
 				}
 			}

@@ -4,12 +4,15 @@ package
 	import net.flashpunk.graphics.Spritemap;
 	import net.flashpunk.utils.Input;
 	import net.flashpunk.FP;
+	import net.flashpunk.Sfx;
 
 	public class Picture extends Entity
 	{
 		[Embed(source = 'Asserts/Textures/curtains.png')] private const IMAGE:Class;
 		
 		public var sprPicture:Spritemap = new Spritemap(IMAGE, 50, 50);
+		[Embed (source = 'Asserts/Textures/audio/curtain.mp3')] private const SOUND:Class;
+		private var sound:Sfx = new Sfx(SOUND);
 		
 		public function Picture() 
 		{
@@ -30,6 +33,7 @@ package
 				{
 					sprPicture.play("Close");
 					type = "none";
+					sound.play();
 					(world as Hall).Found();
 				}
 			}
